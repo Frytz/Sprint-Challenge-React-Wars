@@ -8,11 +8,21 @@ const CharCard = props => {
     const {id,photo, name, location, gender, origin, species, status} = props;
     return (
 
-        <Card key = {id} >
-            <CardTitle>Rick and Morty</CardTitle>
+        <Card key = {id} style ={{
+            width: "318px",
+            margin: "10px",
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "white"
+        }}>
+            <CardTitle style={{
+                fontWeight:"bolder"
+            }}>Rick and Morty</CardTitle>
             <CardImg top width="100%" src={photo} alt={name}/>
             <CardBody>
-                <CardText padding= "5px">{name} {location}, {origin} </CardText>
+                <CardText style={{
+                    padding: "5px",
+                }}><span style={{ color: "blue" }}>{name}</span> resides on {location}, and is from {origin}.  {name}'s gender is {gender}, and is {species}. {name}'s current status is {status}.  </CardText>
             </CardBody>
         </Card>
     )
