@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-// import CharCard from "./CharCard";
+import CharCard from "./CharCard";
 
 //styles
 const CharDiv = styled.div`
@@ -33,6 +33,14 @@ axios
 return (
 <CharDiv>
     {console.log("data",data)}
+        {data.map(char => (
+
+            <CharCard key={char.id} id={char.id} photo={char.image} name={char.name} location={char.location.name}
+                origin={char.origin.name} species={char.species} status={char.status} gender={char.gender}
+            />
+
+        ))}
+
 </CharDiv>
 );
 }

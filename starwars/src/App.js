@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Characters from "./components/Character"
+import Characters from "./components/Characters"
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,9 +14,14 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div>
-      <Characters/>
+    <div className="App">
+      <h1 className="Header">Character</h1>
+    
+    <Characters />
     </div>
+    
+      
+    
   );
 }
 
