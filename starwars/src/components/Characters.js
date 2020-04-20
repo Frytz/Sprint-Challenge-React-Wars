@@ -14,9 +14,10 @@ justify-content: center;
 
 //character cards
 const Characters =() => {
-   let state = { count: 1};
+//    let state = { count: 1};
+//    let increment = () => this.setPage(this.state.count + 1)
     const [data, setData] = useState([]);
-    const [page, setPage] = useState(state)
+    const [page, setPage] = useState(1)
 
 //  useEffect(() =>{
 //   axios
@@ -34,7 +35,13 @@ const Characters =() => {
         const fetchData = () => {
             axios
                 .get('https://rickandmortyapi.com/api/character/?page=' + page)
-                .then(res => setData(res.data.results));
+             
+                .then(res => 
+                    
+                    setData(res.data.results)
+                  
+                );
+              
         };
 
         fetchData();
@@ -43,7 +50,7 @@ const Characters =() => {
 return (
 <div>
 <CharDiv>
-    {console.log("data",data)}
+    {/* {console.log("data",data)} */}
         
         {data.map(char => (
 
@@ -55,7 +62,7 @@ return (
 
 </CharDiv>
 
-<button>test</button>
+<button onClick={e => setPage(page + 1)}>test add 1</button>
 </div>
 );
 }
